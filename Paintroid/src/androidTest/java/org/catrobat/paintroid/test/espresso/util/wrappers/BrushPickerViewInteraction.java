@@ -18,7 +18,7 @@
  */
 
 package org.catrobat.paintroid.test.espresso.util.wrappers;
-
+//test
 import android.support.test.espresso.ViewInteraction;
 
 import org.catrobat.paintroid.R;
