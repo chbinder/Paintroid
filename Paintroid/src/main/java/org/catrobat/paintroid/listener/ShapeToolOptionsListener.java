@@ -21,6 +21,7 @@ package org.catrobat.paintroid.listener;
 
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import org.catrobat.paintroid.R;
@@ -33,6 +34,7 @@ public class ShapeToolOptionsListener {
 	private ImageButton heartButton;
 	private ImageButton starButton;
 	private TextView shapeToolDialogTitle;
+	//private ScrollView herbert;
 
 	public ShapeToolOptionsListener(View shapeToolOptionsView) {
 		squareButton = (ImageButton) shapeToolOptionsView.findViewById(R.id.shapes_square_btn);
@@ -40,6 +42,7 @@ public class ShapeToolOptionsListener {
 		heartButton = (ImageButton) shapeToolOptionsView.findViewById(R.id.shapes_heart_btn);
 		starButton = (ImageButton) shapeToolOptionsView.findViewById(R.id.shapes_star_btn);
 		shapeToolDialogTitle = (TextView) shapeToolOptionsView.findViewById(R.id.shape_tool_dialog_title);
+		//herbert = (ScrollView)shapeToolOptionsView.findViewById(R.id.dialog_stroke);
 
 		initializeListeners();
 		setShapeActivated(GeometricFillTool.BaseShape.RECTANGLE);
