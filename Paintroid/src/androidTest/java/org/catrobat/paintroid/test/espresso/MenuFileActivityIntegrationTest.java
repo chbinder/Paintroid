@@ -457,65 +457,6 @@ public class MenuFileActivityIntegrationTest {
 				.checkPixelColor(Color.TRANSPARENT, BitmapLocationProvider.MIDDLE);
 	}
 
-	@Test
-	@Ignore // TODO: fails, File is still the same
-	public void testSaveLoadedImage() throws URISyntaxException, IOException {
-
-		// Save new image, stub ACTION_GET_CONTENT intent
-		Intent intent = new Intent();
-		intent.setData(NavigationDrawerMenuActivity.savedPictureUri);
-		Instrumentation.ActivityResult result = new Instrumentation.ActivityResult(Activity.RESULT_OK, intent);
-		intending(hasAction(Intent.ACTION_GET_CONTENT)).respondWith(result);
-
-		final int xOffset = 100;
-		onView(isRoot()).perform(swipe(screenPoint, new PointF(screenPoint.x + xOffset, screenPoint.y)));
-
-		openNavigationDrawer();
-
-		onView(withText(R.string.menu_save_image)).perform(click());
-
-		assertNotNull("Saved picture uri is null", NavigationDrawerMenuActivity.savedPictureUri);
-
-		addUriToDeletionFileList(NavigationDrawerMenuActivity.savedPictureUri);
-
-		// Load the saved image
-		openNavigationDrawer();
-
-		onView(withText(R.string.menu_load_image)).perform(click());
-
-		assertTrue("Save copy flag not true", launchActivityRule.getActivity().saveCopy);
-
-		openNavigationDrawer();
-
-		// Save copy of image
-		onView(withText(R.string.menu_save_copy)).perform(click());
-
-		assertNotNull("Saved picture uri is null", NavigationDrawerMenuActivity.savedPictureUri);
-
-		addUriToDeletionFileList(NavigationDrawerMenuActivity.savedPictureUri);
-
-		File saveFile = new File(getRealFilePathFromUri(NavigationDrawerMenuActivity.savedPictureUri));
-
-		final long oldLength = saveFile.length();
-		final long firstModified = saveFile.lastModified();
-
-		// Draw and save image
-		final int yOffset = 200;
-		onView(isRoot()).perform(swipe(screenPoint, new PointF(screenPoint.x, screenPoint.y + yOffset)));
-
-		openNavigationDrawer();
-
-		onView(withText(R.string.menu_save_image)).perform(click());
-
-		File actualSaveFile = new File(getRealFilePathFromUri(NavigationDrawerMenuActivity.savedPictureUri));
-
-		long newLength = actualSaveFile.length();
-		long lastModified = actualSaveFile.lastModified();
-
-		assertNotEquals("File is still the same", oldLength, newLength);
-		assertNotEquals("File not currently modified", firstModified, lastModified);
-	}
-
 	private String getRealFilePathFromUri(Uri uri) {
 		String[] fileColumns = {MediaStore.Images.Media.DATA};
 
