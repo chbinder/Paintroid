@@ -200,21 +200,6 @@ public class ToolSelectionIntegrationTest {
 		assertFalse("Tool button should be most right", scrollView.canScrollHorizontally(scrollRight));
 	}
 
-	// TODO: how to implement?
-	@Test
-	@Ignore
-	public void testToolSelectionStartAnimation() {
-		int scrollX = scrollView.getScrollX();
-		assertTrue("Scroll position should be > 0 at start", scrollX > 0);
-
-		for (int i = 0; i < 5; i++) {
-			assertTrue(scrollView.getScrollX() <= scrollX);
-			scrollX = scrollView.getScrollX();
-		}
-
-		assertEquals("Animation should be finished after a second", 0, scrollX);
-	}
-
 	@Test
 	public void testToolSelectionToast() {
 		ToolType toolType = ToolType.CURSOR;

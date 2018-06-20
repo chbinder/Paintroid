@@ -121,22 +121,6 @@ public class ActivityOpenedFromPocketCodeTest {
 	}
 
 	@Test
-	@Ignore //TODO: does export still exist?
-	public void testExportNotTouchingOriginal() {
-		onView(isRoot()).perform(touchAt(screenPoint.x, screenPoint.y));
-
-		openNavigationDrawer();
-
-		long lastModifiedBefore = imageFile.lastModified();
-		long fileSizeBefore = imageFile.length();
-
-		onView(withText(R.string.menu_export)).perform(click());
-
-		assertThat("Image modified", imageFile.lastModified(), equalTo(lastModifiedBefore));
-		assertThat("Saved image length changed", imageFile.length(), equalTo(fileSizeBefore));
-	}
-
-	@Test
 	public void testBackToPocketCode() {
 		onView(isRoot()).perform(touchAt(screenPoint.x, screenPoint.y));
 

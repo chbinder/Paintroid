@@ -113,7 +113,7 @@ public class RectangleFillToolIntegrationTest {
 	 * Fails if whole espresso tests run, there lives an artifact in drawing surface:
 	 * AssertionError: expected:<0> but was:<-16777216>
 	 */
-	@Ignore
+	//@Ignore
 	@Test
 	public void testEllipseIsDrawnOnBitmap() {
 
