@@ -103,66 +103,6 @@ public class ScrollingViewIntegrationTest {
 //		dragAndCheckIfCanvasHasMovedInXAndY(topLeft, middle);
 	}
 
-	@Ignore
-	@Test
-	public void testScrollingViewRectTool() throws NoSuchFieldException, IllegalAccessException {
-
-		final int perspectiveScale = 5;
-		PaintroidApplication.perspective.setScale(perspectiveScale);
-
-		float surfaceWidth = getSurfaceWidth();
-		float surfaceHeight = getSurfaceHeight();
-
-		float distanceToLayerView = 60;
-		float distanceToNavigationDrawer = 60;
-		float xRight = surfaceWidth - distanceToLayerView;
-		float xLeft = distanceToNavigationDrawer;
-		float xMiddle = surfaceWidth / 2;
-
-		final float actionBarHeight = getActionbarHeight();
-		final float statusBarHeight = getStatusbarHeight();
-
-		float yMiddle = (surfaceHeight / 2 + actionBarHeight + statusBarHeight);
-		float yTop = (actionBarHeight + statusBarHeight);
-		float yBottom = surfaceHeight + yTop - 1;
-
-		PointF middle = new PointF(xMiddle, yMiddle);
-		PointF rightMiddle = new PointF(xRight, yMiddle);
-		PointF leftMiddle = new PointF(xLeft, yMiddle);
-		PointF topMiddle = new PointF(xMiddle, yTop);
-		PointF bottomMiddle = new PointF(xMiddle, yBottom);
-		PointF topLeft = new PointF(xLeft, yTop);
-		PointF bottomRight = new PointF(xRight, yBottom);
-		PointF bottomLeft = new PointF(xLeft, yBottom);
-		PointF topRight = new PointF(xRight, yTop);
-
-		selectTool(ToolType.SHAPE);
-		clickSelectedToolButton();
-
-		dragAndCheckIfCanvasHasMovedInXOrY(middle, rightMiddle);
-		dragAndCheckIfCanvasHasMovedInXOrY(rightMiddle, middle);
-		dragAndCheckIfCanvasHasMovedInXOrY(middle, leftMiddle);
-		dragAndCheckIfCanvasHasMovedInXOrY(leftMiddle, middle);
-		dragAndCheckIfCanvasHasMovedInXOrY(middle, topMiddle);
-		dragAndCheckIfCanvasHasMovedInXOrY(topMiddle, middle);
-		dragAndCheckIfCanvasHasMovedInXOrY(middle, bottomMiddle);
-		dragAndCheckIfCanvasHasMovedInXOrY(bottomMiddle, middle);
-
-		dragAndCheckIfCanvasHasMovedInXAndY(middle, topRight);
-		dragAndCheckIfCanvasHasMovedInXAndY(topRight, middle);
-		dragAndCheckIfCanvasHasMovedInXAndY(middle, bottomRight);
-		dragAndCheckIfCanvasHasMovedInXAndY(bottomRight, middle);
-		dragAndCheckIfCanvasHasMovedInXAndY(middle, bottomLeft);
-		dragAndCheckIfCanvasHasMovedInXAndY(bottomLeft, middle);
-		dragAndCheckIfCanvasHasMovedInXAndY(middle, topLeft);
-		dragAndCheckIfCanvasHasMovedInXAndY(topLeft, middle);
-
-		/*dragAndCheckIfCanvasHasNotMoved(topLeft, topRight);
-		dragAndCheckIfCanvasHasNotMoved(bottomRight, topRight);
-		dragAndCheckIfCanvasHasNotMoved(bottomRight, bottomLeft);
-		dragAndCheckIfCanvasHasNotMoved(topLeft, bottomLeft);*/
-	}
-
 	@Test
 	public void testScrollingViewCursorTool() throws NoSuchFieldException, IllegalAccessException {
 		final int perspectiveScale = 5;
