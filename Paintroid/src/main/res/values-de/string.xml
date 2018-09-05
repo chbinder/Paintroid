@@ -35,22 +35,11 @@
   <string name="button_text">Text</string>
   <string name="button_shape">Formen</string>
   <string name="done">Fertig</string>
-  <string name="terms_of_use_and_service_title">Nutzungsbedingungen und Service</string>
-  <string name="terms_of_use_and_service_content">Um Pocket Paint und andere ausführbare Dateien, die durch das Catrobat-Projekt angeboten werden, verwenden zu dürfen, musst du unsere Nutzungsbedingungen und Service strikt befolgen. Für genauere Informationen siehe auf den Link darunter.\n\n</string>
-  <string name="terms_of_use_and_service_url_text">Nutzungsbedingungen und Service</string>
-  <string name="about_title">Über Pocket Paint…</string>
-  <string name="about_content">Pocket Paint ist ein Bild-Editor, der Teil des Catrobat Projektes ist.\n\nCatrobat ist eine visuelle Programmiersprache welche kreative Tools für Smartphones, Tablets und mobile Browser bereitstellt.\n\n Der Source-Code von Pocket Paint steht hauptsächlich unter der <xliff:g id="license" example="GNU Affero General Public License">%s</xliff:g>.\n Für genaue Angaben zu der Lizenz, beachte den Link unten.\n\n</string>
-  <string name="about_license_url_text">Pocket Paint Quellcode-Lizenz</string>
-  <string name="about_catroid_url_text">Über Catrobat</string>
-  <string name="about_version">Version:</string>
   <string name="color_chooser_title">Farbauswahl</string>
-  <string name="color_rgb">Rot Grün Blau (RGB)</string>
   <string name="color_red">Rot</string>
   <string name="color_green">Grün</string>
   <string name="color_blue">Blau</string>
   <string name="color_alpha">Alpha</string>
-  <string name="color_pre">vorausgewählt</string>
-  <string name="color_hsv">HSV-Farbwähler</string>
   <string name="dialog_tools_title">Werkzeuge</string>
   <string name="dialog_error_save_title">Fehler Laden/Speichern Datei</string>
   <string name="dialog_error_sdcard_text">Überprüfe das Bild oder die SD-Karte!</string>
@@ -83,8 +72,6 @@
   <string name="menu_hide_menu">Vollbild</string>
   <string name="menu_show_menu">Vollbildmodus beenden</string>
   <string name="menu_new_image_from_camera">Neues Bild von der Kamera</string>
-  <string name="menu_terms_of_use_and_service">Nutzungsbedingungen</string>
-  <string name="menu_about">Über Pocket Paint</string>
   <string name="menu_back">@string/closing_catroid_security_question_title</string>
   <string name="menu_export">Exportieren</string>
   <string name="saved">Bild gespeichert</string>
@@ -132,6 +119,4 @@
   <string name="lets_go">Los Geht\'s</string>
   <string name="next">Weiter</string>
   <string name="skip">Überspringen</string>
-  <string name="menu_language">Sprache</string>
-  <string name="device_language">Systemsprache</string>
 </resources>
