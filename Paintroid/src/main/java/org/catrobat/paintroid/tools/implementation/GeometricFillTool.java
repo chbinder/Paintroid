@@ -228,6 +228,7 @@ public class GeometricFillTool extends BaseToolWithRectangleShape {
 	public void resetInternalState() {
 	}
 
+	//pointless comment
 	@Override
 	public void setupToolOptions() {
 		LayoutInflater inflater = LayoutInflater.from(context);
